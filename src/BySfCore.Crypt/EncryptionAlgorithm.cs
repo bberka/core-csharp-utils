@@ -5,5 +5,5 @@ public enum EncryptionAlgorithm
   AES,
   DES,
   RC2,
-  TripleDES,
+  TripleDES
 }
