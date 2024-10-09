@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="544b50f4-edde-4893-bf22-b14ee772048e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BySf Common Projects/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BySf Common Projects/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BySf Common Projects/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.bayarsoft-common-projects/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.bayarsoft-common-projects/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bayarsoft-common-projects.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Crypt/BayCrypt.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Crypt/BySfCore.Crypt.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Crypt/EncryptionAlgorithm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Email/BySfCore.Email.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Email/EmailConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Email/EmailServiceProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Email/IEmailService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Email/MockSmtpEmailService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Email/SendGridEmailConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Email/SendGridEmailService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.Email/SmtpEmailService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.ResultStruct/BySfCore.ResultStruct.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.ResultStruct/Result.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.ResultStruct/ResultExt.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BySfCore.ResultStruct/ResultGlobalSettings.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2nCjPogILnITkWAgrkGVhC2E6RG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="544b50f4-edde-4893-bf22-b14ee772048e" name="Changes" comment="" />
+      <created>1728483930592</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728483930592</updated>
+      <workItem from="1728483931701" duration="70000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
