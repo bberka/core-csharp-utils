@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BySfCore.Email;
+namespace Email;
 
 public sealed class EmailConfig
 {

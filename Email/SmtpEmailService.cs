@@ -2,12 +2,14 @@
 using MimeKit;
 using Serilog;
 
-namespace BySfCore.Email;
+namespace Email;
 
 public sealed class SmtpEmailService(EmailConfig config) : IEmailService
 {
-  public async Task<ResultStruct.Result> SendEmailAsync(string to, string subject, string body, bool isHtml = false) {
-    try {
+  public async Task<ResultStruct.Result> SendEmailAsync(string to, string subject, string body, bool isHtml = false)
+  {
+    try
+    {
       var client = new SmtpClient();
       await client.ConnectAsync(config.SmtpServer, config.SmtpPort, true);
       await client.AuthenticateAsync(config.Username, config.Password);
@@ -15,7 +17,8 @@ public sealed class SmtpEmailService(EmailConfig config) : IEmailService
       message.Subject = subject;
       message.Body = new TextPart(isHtml
                                     ? "html"
-                                    : "plain") {
+                                    : "plain")
+      {
         Text = body
       };
       message.To.Add(new MailboxAddress(to, to));
@@ -25,7 +28,8 @@ public sealed class SmtpEmailService(EmailConfig config) : IEmailService
       Log.Information("[SmtpEmailService] Email sent successfully");
       return ResultStruct.Result.Success();
     }
-    catch (Exception ex) {
+    catch (Exception ex)
+    {
       Log.Error(ex, "[SmtpEmailService] Email sending failed");
       return ResultStruct.Result.Error();
     }

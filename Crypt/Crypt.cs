@@ -1,13 +1,22 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace BySfCore.Crypt;
+namespace Crypt;
 
-public sealed class ByCrypt
+public enum EncryptionAlgorithm
+{
+  AES,
+  DES,
+  RC2,
+  TripleDES
+}
+
+public sealed class Crypt
 {
   private const int ITERATIONS = 32;
 
-  public ByCrypt(string mainKey, string salt, EncryptionAlgorithm algorithm = EncryptionAlgorithm.AES) {
+  public Crypt(string mainKey, string salt, EncryptionAlgorithm algorithm = EncryptionAlgorithm.AES)
+  {
     MainKey = mainKey;
     Salt = salt;
     Algorithm = algorithm;
@@ -17,32 +26,38 @@ public sealed class ByCrypt
   public EncryptionAlgorithm Algorithm { get; }
   public string MainKey { get; }
 
-  public byte[] EncryptRaw(byte[] data) {
+  public byte[] EncryptRaw(byte[] data)
+  {
     using var algorithm = GetAlgorithm();
     using var encryptor = algorithm.CreateEncryptor();
     return encryptor.TransformFinalBlock(data, 0, data.Length);
   }
 
-  public byte[] DecryptRaw(byte[] data) {
+  public byte[] DecryptRaw(byte[] data)
+  {
     using var algorithm = GetAlgorithm();
     using var decryptor = algorithm.CreateDecryptor();
     return decryptor.TransformFinalBlock(data, 0, data.Length);
   }
 
-  public string Encrypt(string data) {
+  public string Encrypt(string data)
+  {
     var plainBytes = Encoding.UTF8.GetBytes(data);
     var encryptedBytes = EncryptRaw(plainBytes);
     return Convert.ToBase64String(encryptedBytes);
   }
 
-  public string Decrypt(string data) {
+  public string Decrypt(string data)
+  {
     var encryptedBytes = Convert.FromBase64String(data);
     var decryptedBytes = DecryptRaw(encryptedBytes);
     return Encoding.UTF8.GetString(decryptedBytes);
   }
 
-  private SymmetricAlgorithm GetAlgorithm() {
-    SymmetricAlgorithm algorithm = Algorithm switch {
+  private SymmetricAlgorithm GetAlgorithm()
+  {
+    SymmetricAlgorithm algorithm = Algorithm switch
+    {
       EncryptionAlgorithm.AES => Aes.Create(),
       EncryptionAlgorithm.DES => DES.Create(),
       EncryptionAlgorithm.RC2 => RC2.Create(),

@@ -1,4 +1,4 @@
-﻿namespace BySfCore.Email;
+﻿namespace Email;
 
 public interface IEmailService
 {

@@ -1,13 +1,22 @@
-﻿using BySfCore.ResultStruct;
-using SendGrid;
+﻿using SendGrid;
 using SendGrid.Helpers.Mail;
 using Serilog;
 
-namespace BySfCore.Email;
+namespace Email;
+
+public sealed class SendGridEmailConfig
+{
+  public required string FromEmail { get; set; }
+
+  public required string FromName { get; set; }
+
+  public required string SendGridEmailApiKey { get; set; }
+}
 
 public sealed class SendGridEmailService(SendGridEmailConfig config) : IEmailService
 {
-  public async Task<Result> SendEmailAsync(string toEmail, string mailSubject, string body, bool isHtml = false) {
+  public async Task<Result> SendEmailAsync(string toEmail, string mailSubject, string body, bool isHtml = false)
+  {
     var client = new SendGridClient(config.SendGridEmailApiKey);
     var from = new EmailAddress(config.FromEmail, config.FromName);
     var to = new EmailAddress(toEmail);
@@ -23,11 +32,13 @@ public sealed class SendGridEmailService(SendGridEmailConfig config) : IEmailSer
     var response = await client.SendEmailAsync(msg);
     var responseString = await response.Body.ReadAsStringAsync();
     var isSuccess = response.IsSuccessStatusCode;
-    if (isSuccess) {
+    if (isSuccess)
+    {
       Log.Information("[SendGridEmailService] Email sent successfully. Response: {Response}", responseString);
       return Result.Success();
     }
-    else {
+    else
+    {
       Log.Error("[SendGridEmailService] Email sending failed. Response: {Response}", responseString);
       return Result.Error();
     }
